@@ -1,4 +1,4 @@
-package pl.zajavka.infrastructure.configuration;
+package pl.zajavka.zajavkastore.infrastructure.configuration;
 
 import jakarta.persistence.EntityManagerFactory;
 import lombok.AllArgsConstructor;
@@ -14,8 +14,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import pl.zajavka.infrastructure.database.model.EntityMarker;
-import pl.zajavka.infrastructure.database.jparepositories.JpaRepositoriesMarker;
+import pl.zajavka.zajavkastore.infrastructure.database.entity.EntityMarker;
+import pl.zajavka.zajavkastore.infrastructure.database.jparepositories.JpaRepositoriesMarker;
 
 import javax.sql.DataSource;
 import java.util.Objects;
@@ -24,8 +24,8 @@ import java.util.Properties;
 @Configuration
 @AllArgsConstructor
 @EnableTransactionManagement
-@PropertySource({"classpath:database.properties"})
 @EnableJpaRepositories(basePackageClasses = JpaRepositoriesMarker.class)
+@PropertySource({"classpath:database.properties"})
 public class PersistenceJPAConfiguration {
 
 
