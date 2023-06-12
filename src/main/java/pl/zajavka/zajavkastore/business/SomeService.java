@@ -15,10 +15,10 @@ public class SomeService {
     private final PurchaseDatabaseRepository purchaseDatabaseRepository;
 
     public void call() {
-        System.out.println("#findByEmail(): " + customerDatabaseRepository.findByEmail("nprati1m@exblog.jp"));
-        System.out.println("#findByCustomerId(): " + customerDatabaseRepository.findByCustomerId(45));
-        System.out.println("#findByNameOrEmail(): " + customerDatabaseRepository.findByNameOrEmail("Florian", "cwrightson1a@netvibes.com"));
-        System.out.println("#findByNameOrEmail(): " + customerDatabaseRepository.findByNameOrEmail("Florian", "fjertz15@amazon.cuk"));
-        System.out.println("#findDistinctByEmail(): " + customerDatabaseRepository.findDistinctByEmail("nprati1m@exblog.jp"));
+//        System.out.println("#findByEmail(): " + customerDatabaseRepository.findByEmail("nprati1m@exblog.jp"));
+//        System.out.println("#findByCustomerId(): " + customerDatabaseRepository.findByCustomerId(45));
+//        System.out.println("#findByNameOrEmail(): " + customerDatabaseRepository.findByNameOrEmail("Florian", "cwrightson1a@netvibes.com"));
+//        System.out.println("#findByNameOrEmail(): " + customerDatabaseRepository.findByNameOrEmail("Florian", "fjertz15@amazon.cuk"));
+//        System.out.println("#findDistinctByEmail(): " + customerDatabaseRepository.findDistinctByEmail("nprati1m@exblog.jp"));
     }
 }
