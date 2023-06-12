@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group = 'pl.zajavka'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+ext {
+    logback_version = '1.2.11'
+    lombok_version = '1.18.24'
+    junit_version = '5.8.2'
+    spring_version = '5.3.22'
+    hibernate_version = '5.6.10.Final'
+    postgresql_driver_version = '42.3.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+
+    compileOnly "org.projectlombok:lombok:$lombok_version"
+    annotationProcessor "org.projectlombok:lombok:$lombok_version"
+
+    implementation "org.springframework:spring-core:$spring_version"
+    implementation "org.springframework:spring-beans:$spring_version"
+    implementation "org.springframework:spring-context:$spring_version"
+    implementation "org.springframework:spring-context-support:$spring_version"
+    implementation "org.springframework:spring-expression:$spring_version"
+    implementation "org.springframework:spring-jdbc:$spring_version"
+    implementation "org.springframework:spring-tx:$spring_version"
+
+    implementation "org.springframework:spring-orm:$spring_version"
+    implementation "org.hibernate:hibernate-core:$hibernate_version"
+    implementation "org.postgresql:postgresql:$postgresql_driver_version"
+
+    testCompileOnly "org.projectlombok:lombok:$lombok_version"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombok_version"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
