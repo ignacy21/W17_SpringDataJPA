@@ -13,7 +13,6 @@ public class ZajavkaStoreApplication {
         NamedQueryService namedQueryService = context.getBean(NamedQueryService.class);
         SomeService someService = context.getBean(SomeService.class);
 
-        namedQueryService.call();
-//        someService.call();
+        someService.call();
     }
 }

@@ -9,6 +9,10 @@ import java.util.Optional;
 
 @Repository
 public interface CustomerDatabaseRepository extends JpaRepository<CustomerEntity, Integer> {
+    // NQ, NNQ
+    List<CustomerEntity> findAllCustomers();
+    CustomerEntity findCustomerByEmail(String mail);
+    List<CustomerEntity> findAllCustomersNNQ();
 
     CustomerEntity findByEmail(String email);
     Optional<CustomerEntity> findByCustomerId(Integer id);
@@ -16,8 +20,4 @@ public interface CustomerDatabaseRepository extends JpaRepository<CustomerEntity
     List<CustomerEntity> findByNameAndEmail(String name, String email);
     CustomerEntity findDistinctByEmail(String email);
 
-    List<CustomerEntity> findAllCustomers();
-    CustomerEntity findCustomerByEmail(String mail);
-
-    List<CustomerEntity> findAllCustomersNNQ();
 }
