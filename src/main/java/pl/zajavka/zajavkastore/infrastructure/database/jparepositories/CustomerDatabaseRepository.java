@@ -1,5 +1,6 @@
 package pl.zajavka.zajavkastore.infrastructure.database.jparepositories;
 
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import pl.zajavka.zajavkastore.infrastructure.database.entity.CustomerEntity;
@@ -14,10 +15,19 @@ public interface CustomerDatabaseRepository extends JpaRepository<CustomerEntity
     CustomerEntity findCustomerByEmail(String mail);
     List<CustomerEntity> findAllCustomersNNQ();
 
+
+    @EntityGraph(
+            type = EntityGraph.EntityGraphType.FETCH,
+            attributePaths = {
+                    "purchaseEntities",
+                    "purchaseEntities.opinionEntity"
+            }
+    )
     CustomerEntity findByEmail(String email);
     Optional<CustomerEntity> findByCustomerId(Integer id);
     List<CustomerEntity> findByNameOrEmail(String name, String email);
     List<CustomerEntity> findByNameAndEmail(String name, String email);
     CustomerEntity findDistinctByEmail(String email);
 
+    List<CustomerEntity> findAllByEmailContaining(String email);
 }
