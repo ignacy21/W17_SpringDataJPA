@@ -60,7 +60,7 @@ public class CustomerEntity {
     @Column(name = "telephone_number")
     private String telephoneNumber;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customerEntity")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customerEntity")
     private Set<PurchaseEntity> purchaseEntities;
 
 }

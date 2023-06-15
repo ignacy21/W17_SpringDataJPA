@@ -35,7 +35,7 @@ public class PurchaseEntity {
     @Column(name = "date_time")
     private OffsetDateTime dateTime;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "purchaseEntity")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "purchaseEntity")
     private OpinionEntity opinionEntity;
 
 }
