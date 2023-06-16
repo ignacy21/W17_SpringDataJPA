@@ -1,6 +1,6 @@
 package pl.zajavka.business;
 
-import pl.zajavka.infrastructure.database.EmployeeEntity;
+import pl.zajavka.infrastructure.database.model.EmployeeEntity;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;

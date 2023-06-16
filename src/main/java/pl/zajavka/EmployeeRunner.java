@@ -9,9 +9,5 @@ public class EmployeeRunner {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
-        EmployeeService employeeService = context.getBean(EmployeeService.class);
-
-        employeeService.runSuccessful();
-//        employeeService.testTransactional();
     }
 }
